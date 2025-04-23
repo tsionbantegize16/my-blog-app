@@ -1,35 +1,31 @@
 # 🚀 My Blog App
 
-[![Status](https://img.shields.io/badge/Status-Developing-yellow)](https://github.com/tsionbantegize16/my-blog-app)
-[![Made with React](https://img.shields.io/badge/Made%20with-React-61DAFB?logo=react&logoColor=white)](https://react.dev/)
-[![Styled with Tailwind CSS](https://img.shields.io/badge/Styled%20with-Tailwind_CSS-38B2AC?logo=tailwind-css&logoColor=white)](https://tailwindcss.com/)
+[![Status: Developing](https://img.shields.io/badge/Status-Developing-yellow?style=flat-square)](https://github.com/tsionbantegize16/my-blog-app)
+[![React](https://img.shields.io/badge/React-61DAFB?style=flat-square&logo=react&logoColor=white)](https://react.dev/)
+[![Tailwind CSS](https://img.shields.io/badge/Tailwind_CSS-38B2AC?style=flat-square&logo=tailwind-css&logoColor=white)](https://tailwindcss.com/)
 
-A modern and responsive blog application built with React and styled with Tailwind CSS.
+Simple blog built with React and Tailwind CSS.
 
 ## ✨ Features
 
-- Create and publish new blog posts effortlessly.
-- Clean and intuitive layout for reading articles.
-- Responsive design that looks great on any device.
-- [Add other key features as bullet points]
+- Create and read blog posts.
+- Responsive layout.
 
-## 🛠️ Tech Stack
+## 🛠️ Tech
 
-- **Frontend:** React
-- **Styling:** Tailwind CSS
-- **Routing:** React Router DOM
-- [Add any other significant technologies]
+React, Tailwind CSS, React Router DOM.
 
 ## 💨 Quick Start
 
-Get your local copy running in a few easy steps.
+```bash
+git clone [https://github.com/tsionbantegize16/my-blog-app.git](https://github.com/tsionbantegize16/my-blog-app.git)
+cd my-blog-app
+npm install
+npm start
+```
 
-### Prerequisites
+Open [http://localhost:3000](https://www.google.com/search?q=http://localhost:3000).
 
-Make sure you have [Node.js](https://nodejs.org/) and [npm](https://www.npmjs.com/) (or [yarn](https://yarnpkg.com/)) installed on your machine.
+## 📬 Contact
 
-### Installation
-
-1. Clone the repository:
-   ```bash
-   git clone [https://github.com/tsionbantegize16/my-blog-app.git](https://github.com/tsionbantegize16/my-blog-app.git)
+[GitHub](https://github.com/tsionbantegize16)

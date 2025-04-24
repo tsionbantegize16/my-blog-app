@@ -1,7 +1,8 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
+import backgroundImage from '../assets/image.png'; // Import your background image
 
-const VibrantBlogHomePage = () => {
+const PersonalBlogHomePage = () => {
   const theme = {
     coopBlue: "#00adef",
     coopBlueHover: "#0086ba",
@@ -12,52 +13,63 @@ const VibrantBlogHomePage = () => {
     accentBackgroundColor: "#e0f7fa", // Light blueish background for sections
   };
 
+  const headerHeight = '500px'; // Define the height of the header here (adjust as needed)
+
   return (
     <div className="min-h-screen bg-cover bg-center" style={{ backgroundColor: theme.backgroundColor }}>
-      {/* Fullscreen Header with Coop Blue */}
-      <header className="relative py-20 text-center text-white bg-black bg-opacity-70">
+      {/* Fullscreen Header with Background Image */}
+      <header
+        className="relative text-center text-white bg-black bg-opacity-70"
+        style={{
+          backgroundImage: `url(${backgroundImage})`, // Set the background image
+          backgroundSize: 'cover', // Fill the space
+          backgroundPosition: 'center',
+          height: headerHeight, // Set the height of the header
+          display: 'flex', // Use flexbox to align content vertically
+          flexDirection: 'column',
+          justifyContent: 'center', // Center content vertically
+          alignItems: 'center', // Center content horizontally
+        }}
+      >
         <div className="container mx-auto px-6">
-          <h1 className="text-6xl font-extrabold mb-8" style={{ color: theme.coopBlue }}>
-            Exploring the Art of Living Well
-          </h1>
-          <p className="text-xl mb-10">
-            A personal journey through inspiring design, thoughtful living, and creative expressions.
-          </p>
-          <Link
-            to="/about"
-            className="inline-block py-3 px-8 rounded-full text-lg font-semibold hover:shadow-lg transition-shadow duration-300"
-            style={{ backgroundColor: theme.coopOrange, color: 'white', ':hover': { backgroundColor: theme.coopOrange } }}
-          >
-            Meet the Author
-          </Link>
+          <div className="max-w-xl mx-auto"> {/* Added a container to control text width */}
+
+            <Link
+              to="/about"
+              className="inline-block py-3 px-8 rounded-full text-lg font-semibold hover:shadow-lg transition-shadow duration-300"
+              style={{ backgroundColor: theme.coopOrange, color: 'white', ':hover': { backgroundColor: theme.coopOrange } }}
+            >
+              About Me
+            </Link>
+          </div>
         </div>
       </header>
 
       <main className="py-16">
         <div className="container mx-auto px-6">
-          {/* Featured Story with Coop Orange Accent */}
+          {/* Featured Post with Coop Orange Accent */}
           <section className="mb-16 p-10 rounded-lg shadow-xl" style={{ backgroundColor: theme.accentBackgroundColor }}>
             <h2 className="text-3xl font-bold mb-8" style={{ color: theme.headingColor }}>
-              Today's Spotlight
+              Featured Post
             </h2>
             <div className="grid grid-cols-1 md:grid-cols-2 gap-10 items-center">
               <img
-                src="https://images.unsplash.com/photo-1556911238-c8733575314c?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxzZWFyY2h8MTJ8fGxpdmV8ZW58MHx8MHx8&auto=format&fit=crop&w=800&q=60"
+                src="https://www.pinterest.com/pin/191543790397531344/"
                 alt="Featured Living Space"
                 className="rounded-md shadow-md"
               />
               <div>
                 <h3 className="text-2xl font-semibold mb-4" style={{ color: theme.coopOrange }}>
-                  Creating a Sanctuary in Your Own Home
+                  My Thoughts on Creating a Home Sanctuary
                 </h3>
                 <p className="text-gray-700 mb-6">
-                  Reflections on designing spaces that nurture well-being and offer a peaceful retreat from the everyday.
+                  A personal reflection on how the spaces we inhabit can significantly impact our well-being and offer a peaceful escape.
                 </p>
                 <Link
                   to="/post/home-sanctuary"
                   className="inline-block text-blue-500 hover:underline font-semibold"
                 >
-                  Dive Into the Story
+                  Read My Latest Article
                 </Link>
               </div>
             </div>
@@ -66,7 +78,7 @@ const VibrantBlogHomePage = () => {
           {/* More Blog Posts with Coop Blue Highlights */}
           <section className="mb-16">
             <h2 className="text-3xl font-bold mb-8" style={{ color: theme.headingColor }}>
-              Recent Explorations
+              Latest Blog Posts
             </h2>
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
               {/* Blog Post 1 */}
@@ -78,10 +90,10 @@ const VibrantBlogHomePage = () => {
                 />
                 <div className="p-6">
                   <h3 className="text-lg font-semibold mb-3" style={{ color: theme.coopBlue }}>
-                    The Foundational Principles of Timeless Design
+                    My Take on Timeless Design Principles
                   </h3>
                   <p className="text-gray-600 text-sm mb-4">
-                    Exploring the core elements that make a design endure and inspire.
+                    Exploring the core elements that, in my opinion, make a design endure and continue to inspire.
                   </p>
                   <Link
                     to="/post/timeless-design"
@@ -101,10 +113,10 @@ const VibrantBlogHomePage = () => {
                 />
                 <div className="p-6">
                   <h3 className="text-lg font-semibold mb-3" style={{ color: theme.coopBlue }}>
-                    Curating Comfortable and Stylish Furniture
+                    A Personal Guide to Comfortable & Stylish Furniture
                   </h3>
                   <p className="text-gray-600 text-sm mb-4">
-                    My personal guide to selecting pieces that blend aesthetics and functionality.
+                    My personal insights and recommendations for selecting furniture that blends aesthetics and practicality.
                   </p>
                   <Link
                     to="/post/furniture-guide"
@@ -124,10 +136,10 @@ const VibrantBlogHomePage = () => {
                 />
                 <div className="p-6">
                   <h3 className="text-lg font-semibold mb-3" style={{ color: theme.coopBlue }}>
-                    Adding Personality with Unique Home Decor
+                    Adding My Personal Touch with Unique Home Decor
                   </h3>
                   <p className="text-gray-600 text-sm mb-4">
-                    Ideas for incorporating decorative elements that reflect your individual style.
+                    My favorite ideas and tips for incorporating decorative elements that truly reflect your individual style.
                   </p>
                   <Link
                     to="/post/home-decor"
@@ -142,20 +154,20 @@ const VibrantBlogHomePage = () => {
               <div className="bg-white rounded-xl shadow-md overflow-hidden hover:shadow-lg transition-shadow duration-300">
                 <div className="p-6 flex flex-col justify-center items-center h-48">
                   <h3 className="text-lg font-semibold mb-3" style={{ color: theme.coopOrange }}>
-                    More Inspiration Coming Soon...
+                    More Thoughts on the Way!
                   </h3>
                   <p className="text-gray-600 text-sm text-center">
-                    Stay tuned for more stories and insights on creating beautiful and meaningful spaces.
+                    I'm always exploring new ideas and experiences to share. Check back soon for more blog posts!
                   </p>
                 </div>
               </div>
             </div>
           </section>
 
-          {/* Categories with Coop Orange Accents */}
+          {/* Topics I Write About with Coop Orange Accents */}
           <section className="mb-12 p-10 rounded-lg shadow-lg" style={{ backgroundColor: theme.accentBackgroundColor }}>
             <h2 className="text-2xl font-bold mb-8" style={{ color: theme.headingColor }}>
-              Explore by Category
+              Topics I Write About
             </h2>
             <div className="flex flex-wrap gap-4">
               <Link
@@ -200,10 +212,10 @@ const VibrantBlogHomePage = () => {
           {/* Newsletter Signup with Coop Blue Background */}
           <section className="p-12 rounded-lg shadow-xl text-center" style={{ backgroundColor: theme.coopBlue }}>
             <h2 className="text-3xl font-bold mb-6 text-white">
-              Stay Connected!
+              Join My Inner Circle!
             </h2>
             <p className="text-white text-lg mb-8">
-              Receive exclusive insights, design tips, and the latest blog posts directly in your inbox.
+              Subscribe to my newsletter for personal updates, behind-the-scenes glimpses, and the newest blog posts delivered straight to you.
             </p>
             <div className="max-w-md mx-auto">
               <input
@@ -226,4 +238,4 @@ const VibrantBlogHomePage = () => {
   );
 };
 
-export default VibrantBlogHomePage;
+export default PersonalBlogHomePage;

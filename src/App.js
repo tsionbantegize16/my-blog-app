@@ -4,6 +4,7 @@ import DefaultLayout from './components/Layout/DefaultLayout';
 import BlogIndexPage from './pages/BlogIndexPage';
 import BlogPostPage from './pages/BlogPostPage';
 import CreateBlogPostPage from './pages/CreateBlogPostPage';
+import HomePage from './pages/HomePage'; // Import the new HomePage component
 import AuthContext from './contexts/AuthContext'; // Assuming you have an AuthContext
 import './styles/globals.css'; // Import global styles
 
@@ -14,7 +15,8 @@ function App() {
       <Router>
         <DefaultLayout>
           <Routes>
-            <Route path="/" element={<BlogIndexPage />} />
+            <Route path="/" element={<HomePage />} /> {/* Route for the new Home Page */}
+            <Route path="/blog" element={<BlogIndexPage />} /> {/* Route for your blog listing */}
             <Route path="/blog/:postId" element={<BlogPostPage />} />
             <Route path="/admin/create" element={<CreateBlogPostPage />} />
           </Routes>

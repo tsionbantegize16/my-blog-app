@@ -1,8 +1,12 @@
-// This can be a more specific component if needed for extra image-related functionality
 import React from 'react';
 
-const ImageBlock = ({ url, alt }) => {
-  return <img src={url} alt={alt} className="w-full rounded-md" />;
-};
+function ImageBlock({ data }) {
+  return (
+    <div className="mb-4 rounded-md overflow-hidden shadow-md">
+      <img className="w-full" src={data.imageUrl} alt={data.altText} />
+      {data.caption && <p className="text-sm text-gray-500 p-2">{data.caption}</p>}
+    </div>
+  );
+}
 
 export default ImageBlock;

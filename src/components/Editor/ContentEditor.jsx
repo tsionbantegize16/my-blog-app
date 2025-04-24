@@ -1,16 +1,22 @@
 import React from 'react';
 
-const ContentEditor = ({ value, onChange }) => {
-  // In a real application, you would integrate a rich text editor here
+function ContentEditor({ initialContent = '', onContentChange }) {
   return (
-    <textarea
-      id="content"
-      className="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline h-48"
-      value={value}
-      onChange={(e) => onChange(e.target.value)}
-      placeholder="Enter your blog content here..."
-    />
+    <div className="mb-4">
+      <label htmlFor="content" className="block text-gray-700 text-sm font-bold mb-2">
+        Content:
+      </label>
+      <textarea
+        id="content"
+        className="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
+        value={initialContent}
+        onChange={(e) => onContentChange(e.target.value)}
+        placeholder="Write your content here..."
+        rows="8"
+      ></textarea>
+      {/* You might want to replace this with a more advanced rich text editor */}
+    </div>
   );
-};
+}
 
 export default ContentEditor;

@@ -1,16 +1,32 @@
 import React from 'react';
+import ContentBlock from './ContentBlock';
+import ImageBlock from './ImageBlock';
+import TextBlock from './TextBlock';
+import VideoBlock from './VideoBlock';
+// Import other block types as you create them
 
-const BlogPost = () => {
-  // Placeholder for displaying a single blog post
+function BlogPost({ post }) {
   return (
-    <div className="container mx-auto py-8">
-      <div className="bg-white rounded-md shadow-md p-6">
-        <h1 className="text-3xl font-semibold mb-4">Blog Post Title</h1>
-        <p className="text-gray-700">This is the content of the blog post. You can add different content blocks here.</p>
-        {/* Render ContentBlocks here */}
+    <div className="bg-white rounded-lg shadow-md p-8">
+      <h1 className="text-4xl font-bold text-gray-800 mb-6">{post.title}</h1>
+      <div className="text-gray-600 mb-4">
+        Published on {new Date(post.date).toLocaleDateString()} by {post.author}
       </div>
+      {post.contentBlocks && post.contentBlocks.map((block, index) => {
+        switch (block.type) {
+          case 'text':
+            return <TextBlock key={index} data={block.data} />;
+          case 'image':
+            return <ImageBlock key={index} data={block.data} />;
+          case 'video':
+            return <VideoBlock key={index} data={block.data} />;
+          // Add cases for other block types
+          default:
+            return <ContentBlock key={index} data={block} />; // Fallback
+        }
+      })}
     </div>
   );
-};
+}
 
 export default BlogPost;
